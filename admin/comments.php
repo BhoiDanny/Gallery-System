@@ -1,43 +1,64 @@
 <?php include("includes/header.php"); ?>
+<?php if(!$session->isSignedIn()){redirect("login.php");} ?>
+<?php
+$comments = Comments::findAll();
+?>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse nav-color navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse nav-color navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
+        <?php include("includes/top_nav.php");?>
 
-            <?php include("includes/top_nav.php");?>
+        <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+        <?php include("includes/side_nav.php");?>
+        <!-- /.navbar-collapse -->
+    </nav>
 
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <?php include("includes/side_nav.php");?>
-            <!-- /.navbar-collapse -->
-        </nav>
+    <div id="page-wrapper">
 
-        <div id="page-wrapper">
+        <div class="container-fluid">
 
-            <div class="container-fluid">
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        COMMENTS
+                    </h1>
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            COMMENTS
-                            <small>Subheading</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Author</th>
+                                <th>Body</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($comments as $comment):?>
+                                <tr>
+                                    <td><?php echo $comment->id;?></td>
+                                    <td><?php echo $comment->author;?>
+                                        <div class="actions-links">
+                                            <a href="delete_comment.php?id=<?php echo($comment->id) ;?>">Delete</a>
+                                            <a href="../photo.php?id=<?php echo($comment->photo_id); ?>">View</a>
+                                        </div>
+                                    </td>
+                                    <td><?php echo $comment->body;?></td>
+                                </tr>
+                            <?php endforeach;?>
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <!-- /.row -->
 
+                </div>
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.row -->
 
         </div>
-        <!-- /#page-wrapper -->
+        <!-- /.container-fluid -->
 
-  <?php include("includes/footer.php"); ?>
+    </div>
+    <!-- /#page-wrapper -->
+
+<?php include("includes/footer.php"); ?>

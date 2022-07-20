@@ -5,7 +5,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Sanny Tech</p>
+                    <p class="text-center">Copyright &copy; Sanny Tech</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

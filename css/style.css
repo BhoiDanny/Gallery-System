@@ -1,0 +1,26 @@
+img.home_image {
+    width: 100%;
+    height: 200px !important;
+}
+img.photo_image {
+    width: 100%;
+}
+
+/*Pager Home*/
+.pager a {
+    margin-inline: 2px;
+}
+.active {
+    background-color: dodgerblue !important;
+    color: #FFF !important;
+}
+
+.pager .active:hover {
+    background-color: #000;
+    opacity: 0.95;
+    color: #FFF;
+}
+.pager .active:active {
+    background-color: lightblue;
+    color: #000;
+}

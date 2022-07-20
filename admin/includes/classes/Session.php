@@ -5,6 +5,7 @@ class Session
     private $signedIn = false;
     public $user_id;
     public $message;
+    public $count;
 
     public function __construct($theSession){
         session_name($theSession);
@@ -12,6 +13,15 @@ class Session
 //        session_start(array("name" => "{$theSession}"));
         $this->checkLogin();
         $this->checkMessage();
+        $this->visitor_count();
+    }
+
+    public function visitor_count() {
+        if(isset($_SESSION['count'])) {
+            return $this->count = $_SESSION['count']++;
+        } else {
+            return $_SESSION['count'] = 1;
+        }
     }
 
     public function message($msg=""){

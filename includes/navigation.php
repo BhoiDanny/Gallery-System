@@ -8,7 +8,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Gallery System</a>
+                <a class="navbar-brand" href=".">Gallery System</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -17,7 +17,7 @@
                         <a class="text-success" href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="photo.php">Photo</a>
                     </li>
                     <li>
                         <a href="./admin">Admin</a>

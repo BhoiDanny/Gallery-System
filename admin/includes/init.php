@@ -1,4 +1,5 @@
 <?php /** @noinspection PhpExpressionResultUnusedInspection */
+date_default_timezone_set("Africa/Accra");
 
 !defined('DS') ? define('DS', DIRECTORY_SEPARATOR) : null;
 const SITEROOT = 'C:' . DS . 'xampp' . DS . 'htdocs' . DS . 'Gallery System - Starter';
@@ -6,10 +7,12 @@ const SITEROOT = 'C:' . DS . 'xampp' . DS . 'htdocs' . DS . 'Gallery System - St
 
 //ini_set('display_errors', 1);
 ob_start();
-require_once("functions.php");
-require_once("classes/Config.php");
-require_once("classes/Alpha.php");
-require_once("classes/Database.php");
-require_once("classes/User.php");
-require_once("classes/Session.php");
-require_once("classes/Photos.php");
+require_once(INCLUDES_PATH.DS."functions.php");
+require_once(INCLUDES_PATH.DS."classes/Config.php");
+require_once(INCLUDES_PATH.DS."classes/Alpha.php");
+require_once(INCLUDES_PATH.DS."classes/Database.php");
+require_once(INCLUDES_PATH.DS."classes/User.php");
+require_once(INCLUDES_PATH.DS."classes/Photos.php");
+require_once(INCLUDES_PATH.DS."classes/Comments.php");
+require_once(INCLUDES_PATH.DS."classes/Session.php");
+require_once(INCLUDES_PATH.DS."classes/Paginate.php");

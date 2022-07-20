@@ -11,7 +11,8 @@
 }*/
 function classAutoLoad($class) {
     $class = strtolower($class);
-    $file = "includes/classes/{$class}.php";
+//    $file = "includes/classes/{$class}.php";
+    $file = INCLUDES_PATH . DS . "classes" . DS . $class . ".php";
     if(is_file($file) && !class_exists($file)) {
         require_once($file);
     } else {
